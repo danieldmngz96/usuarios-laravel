@@ -96,5 +96,16 @@ class UsuariosController extends Controller
         }
     }
     
+
+    public function logout(Request $request)
+{
+    try {
+        Auth::logout(); // Cerrar sesión del usuario actual
+
+        return response()->json(['message' => 'Sesión cerrada exitosamente'], 200);
+    } catch (\Throwable $th) {
+        return response()->json(['error' => $th->getMessage()], 500);
+    }
+}
     
 }

@@ -25,4 +25,6 @@ Route::prefix('v1/user')->group(function () {
     Route::delete('/{id}',[ UsuariosController::class, 'delete']);
 
     Route::post('/login',[ UsuariosController::class, 'loginUser']);
+
+    
 });
